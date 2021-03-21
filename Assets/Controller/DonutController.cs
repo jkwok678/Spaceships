@@ -7,6 +7,7 @@ public class DonutController : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
     [SerializeField] private float maxForce;
+    [SerializeField] private float maxSpin;
     [SerializeField] private float topY;
 
     [SerializeField] private float bottomY;
@@ -21,7 +22,9 @@ public class DonutController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         Vector2 thrust = new Vector2(Random.Range(-maxForce, maxForce), Random.Range(-maxForce, maxForce));
+        float spin = Random.Range(-maxSpin, maxSpin);
         rigidbody.AddForce(thrust);
+        rigidbody.AddTorque(spin);
         
     }
 
