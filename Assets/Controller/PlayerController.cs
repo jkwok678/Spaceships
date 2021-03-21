@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         thrust = Input.GetAxis("Vertical");
         turn = Input.GetAxis("Horizontal");
-        
+
         sortPlayerOutOfBounds();
 
         if (Input.GetButtonDown("Fire1"))
@@ -46,7 +46,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() 
     {
         rigidbody.AddRelativeForce(Vector2.up * thrust);
-        rigidbody.AddTorque(-turn * rotationSpeed);
+
+        float newAngle = rigidbody.rotation- (turn * rotationSpeed * Time.deltaTime);
+        rigidbody.MoveRotation(newAngle);
     }
 
     private void fireLaser()
