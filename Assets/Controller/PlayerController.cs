@@ -56,9 +56,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject newLaser = Instantiate(laser, transform.position, transform.rotation);
-            newLaser.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * laserspeed);
-            Destroy(newLaser, destroyLaserTime);
+            fireLaser();
         }
     }
 
@@ -66,6 +64,13 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody.AddRelativeForce(Vector2.up * thrust);
         rigidbody.AddTorque(-turn * rotationSpeed);
+    }
+
+    private void fireLaser()
+    {
+        GameObject newLaser = Instantiate(laser, transform.position, transform.rotation);
+        newLaser.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * laserspeed);
+        Destroy(newLaser, destroyLaserTime);
     }
     
 }
