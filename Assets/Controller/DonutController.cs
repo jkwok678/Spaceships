@@ -45,6 +45,6 @@ public class DonutController : MonoBehaviour
         {
             newLocation.x = rightX;
         }
-        transform.position = newLocation;
+        rigidbody.position = newLocation;
     }
 }

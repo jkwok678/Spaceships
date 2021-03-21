@@ -7,9 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody2D rigidbody;
-    private float maxVelocity = 2;
+    [SerializeField]private float maxVelocity = 2;
     [SerializeField] private float rotationSpeed;
-    private float thrust;
+    [SerializeField]private float thrust;
     private float turn;
     [SerializeField] private float topY;
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             newLocation.x = rightX;
         }
-        transform.position = newLocation;
+        rigidbody.position = newLocation;
 
         if (Input.GetButtonDown("Fire1"))
         {
