@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class DonutController : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
