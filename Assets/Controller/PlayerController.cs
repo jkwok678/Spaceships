@@ -34,25 +34,8 @@ public class PlayerController : MonoBehaviour
     {
         thrust = Input.GetAxis("Vertical");
         turn = Input.GetAxis("Horizontal");
-
-        Vector2 newLocation = transform.position;
-        if (transform.position.y > topY)
-        {
-            newLocation.y = bottomY;
-        }
-        if (transform.position.y < bottomY)
-        {
-            newLocation.y = topY;
-        }
-        if (transform.position.x > rightX)
-        {
-            newLocation.x = leftX;
-        }
-        if (transform.position.x < leftX)
-        {
-            newLocation.x = rightX;
-        }
-        rigidbody.position = newLocation;
+        
+        sortPlayerOutOfBounds();
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -71,6 +54,28 @@ public class PlayerController : MonoBehaviour
         GameObject newLaser = Instantiate(laser, transform.position, transform.rotation);
         newLaser.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * laserspeed);
         Destroy(newLaser, destroyLaserTime);
+    }
+
+    private void sortPlayerOutOfBounds()
+    {
+        Vector2 newLocation = transform.position;
+        if (transform.position.y > topY)
+        {
+            newLocation.y = bottomY;
+        }
+        if (transform.position.y < bottomY)
+        {
+            newLocation.y = topY;
+        }
+        if (transform.position.x > rightX)
+        {
+            newLocation.x = leftX;
+        }
+        if (transform.position.x < leftX)
+        {
+            newLocation.x = rightX;
+        }
+        rigidbody.position = newLocation;
     }
     
 }
