@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -23,6 +24,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float laserspeed;
     [SerializeField] private float destroyLaserTime;
 
+
+
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -35,11 +39,11 @@ public class PlayerController : MonoBehaviour
         thrust = Input.GetAxis("Vertical");
         turn = Input.GetAxis("Horizontal");
 
-        sortPlayerOutOfBounds();
+        SortPlayerOutOfBounds();
 
         if (Input.GetButtonDown("Fire1"))
         {
-            fireLaser();
+            FireLaser();
         }
     }
 
@@ -51,14 +55,14 @@ public class PlayerController : MonoBehaviour
         rigidbody.MoveRotation(newAngle);
     }
 
-    private void fireLaser()
+    private void FireLaser()
     {
         GameObject newLaser = Instantiate(laser, transform.position, transform.rotation);
         newLaser.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * laserspeed);
         Destroy(newLaser, destroyLaserTime);
     }
 
-    private void sortPlayerOutOfBounds()
+    private void SortPlayerOutOfBounds()
     {
         Vector2 newLocation = transform.position;
         if (transform.position.y > topY)
@@ -79,5 +83,6 @@ public class PlayerController : MonoBehaviour
         }
         rigidbody.position = newLocation;
     }
+
     
 }

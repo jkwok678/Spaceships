@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2149991596308312136
+--- !u!1 &1505892061067682813
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2087899805865743333}
-  - component: {fileID: 47932114084667437}
-  - component: {fileID: 2909084587302037713}
-  - component: {fileID: 3862685971631280699}
+  - component: {fileID: 1505892061067682800}
+  - component: {fileID: 1505892061067682803}
+  - component: {fileID: 1505892061067682802}
+  - component: {fileID: 1505892061067682801}
+  - component: {fileID: 1471595448}
+  - component: {fileID: 1471595449}
   m_Layer: 0
-  m_Name: Laser
-  m_TagString: laser
+  m_Name: Asteroids2Small
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2087899805865743333
+--- !u!4 &1505892061067682800
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149991596308312136}
+  m_GameObject: {fileID: 1505892061067682813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01324819, y: 0.68417263, z: 0}
+  m_LocalPosition: {x: -4.3247566, y: -0.26662898, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &47932114084667437
+--- !u!212 &1505892061067682803
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149991596308312136}
+  m_GameObject: {fileID: 1505892061067682813}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,25 +74,25 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 796e8b2e34d394645a47b7a251415a1f, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.06844115, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dbdf36eff4d21ec468b700ee608ab6d9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.06, y: 0.18}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2909084587302037713
+--- !u!50 &1505892061067682802
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149991596308312136}
+  m_GameObject: {fileID: 1505892061067682813}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -104,29 +106,84 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3862685971631280699
-BoxCollider2D:
+--- !u!60 &1505892061067682801
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149991596308312136}
+  m_GameObject: {fileID: 1505892061067682813}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.06, y: 0.18}
-    newSize: {x: 0.06, y: 0.18}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.06, y: 0.18}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.27797204, y: 0.06296239}
+      - {x: -0.27797204, y: -0.032982197}
+      - {x: -0.07185009, y: -0.066978276}
+      - {x: 0.14335585, y: -0.054970384}
+      - {x: 0.26103348, y: -0.033956528}
+      - {x: 0.2689665, y: -0.003956534}
+      - {x: 0.25996065, y: 0.057900295}
+      - {x: 0.11286336, y: 0.09298221}
+--- !u!114 &1471595448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505892061067682813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa7b73481361ab4da3e17c5c4e5e2e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxForce: 75
+  maxSpin: 25
+  topY: 5.5
+  bottomY: -5.5
+  rightX: 9.5
+  leftX: -9.5
+  largeSize: 0
+  asteroidSmall1: {fileID: 0}
+  asteroidSmall2: {fileID: 0}
+  points: 3
+  scorePointEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1471595449}
+        m_MethodName: AddScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1471595449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505892061067682813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1bb990051fdac4d9126fb48b843093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
