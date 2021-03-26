@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 505423047}
   - component: {fileID: 505423046}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Score Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,24 +404,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1187521134 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4081562418161053788, guid: fe706f5dbadad464598386465ed75235,
-    type: 3}
-  m_PrefabInstance: {fileID: 4081562418029877464}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1187521135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187521134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1bb990051fdac4d9126fb48b843093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1238896710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2244198837950629228, guid: a90c936ae609c9e4582b8937a03fae61,
@@ -521,6 +503,8 @@ GameObject:
   - component: {fileID: 1651592383}
   - component: {fileID: 1651592382}
   - component: {fileID: 1651592381}
+  - component: {fileID: 1651592387}
+  - component: {fileID: 1651592385}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -608,6 +592,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1651592385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651592380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1bb990051fdac4d9126fb48b843093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreCounter: {fileID: 505423046}
+--- !u!222 &1651592387
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651592380}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1505892059787288650
 PrefabInstance:
   m_ObjectHideFlags: 0

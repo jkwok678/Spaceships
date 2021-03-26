@@ -25,7 +25,7 @@ public class AsteroidsController : MonoBehaviour
 
     public int points;
 
-    public UnityEvent scorePointEvent;
+    public static event System.Action<int> ScorePointEvent;
 
 
 
@@ -79,10 +79,14 @@ public class AsteroidsController : MonoBehaviour
             }
             else
             {
-
+                
             }
-            scorePointEvent?.Invoke();
+            
+            ScorePointEvent?.Invoke(points);
             Destroy(gameObject);
+            
+            
+            
         }
     }
 

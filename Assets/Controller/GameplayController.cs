@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
 public class GameplayController : MonoBehaviour
 {
 
-    private TextMeshProUGUI scoreUI;
+    [SerializeField] private TextMeshProUGUI scoreCounter;
     // Start is called before the first frame update
     public int score {private set; get;}
 
-    private void Awake()
+    private void OnEnable()
     {
         score = 0;
-        scoreUI - GetComponent<TextMeshProUGUI>();
+        
+        AsteroidsController.ScorePointEvent += AddScore;
+    }
+
+    private void OnDisable()
+    {
+        AsteroidsController.ScorePointEvent -= AddScore;
     }
 
     public void AddScore(int points)
     {
         score += points;
-        mtText.text = "Score: " + score.ToString();
+        Debug.Log(scoreCounter);
+        scoreCounter.text = "Score: " + score.ToString();
     }
 }

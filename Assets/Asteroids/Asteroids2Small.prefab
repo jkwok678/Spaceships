@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1505892061067682802}
   - component: {fileID: 1505892061067682801}
   - component: {fileID: 1471595448}
-  - component: {fileID: 1471595449}
   m_Layer: 0
   m_Name: Asteroids2Small
   m_TagString: Untagged
@@ -161,29 +160,3 @@ MonoBehaviour:
   asteroidSmall1: {fileID: 0}
   asteroidSmall2: {fileID: 0}
   points: 3
-  scorePointEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1471595449}
-        m_MethodName: AddScore
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1471595449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505892061067682813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1bb990051fdac4d9126fb48b843093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
