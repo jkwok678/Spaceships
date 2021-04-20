@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float laserspeed;
     [SerializeField] private float destroyLaserTime;
     [SerializeField] private float dieForce;
+
+    [SerializeField] private Color normalColour;
+    [SerializeField] private Color respawnColour;
     
     public static event System.Action LoseLifeEvent;
 
@@ -90,8 +93,33 @@ public class PlayerController : MonoBehaviour
     {
         if(other.relativeVelocity.magnitude > dieForce)
         {
+            Die();
             LoseLifeEvent?.Invoke();
+            
         }
+    }
+
+    private void Die()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        Invoke("Respawn",2f);
+    }
+
+    private void Respawn()
+    {
+        rigidbody.velocity = Vector2.zero;
+        rigidbody.position = Vector2.zero;
+        SpriteRenderer spaceship = GetComponent<SpriteRenderer>();
+        spaceship.enabled = true;
+        spaceship.color = respawnColour;
+        Invoke("StartActive",3f);
+    }
+
+    private void StartActive()
+    {
+        GetComponent<Collider2D>().enabled = true;
+        GetComponent<SpriteRenderer>().color = normalColour;
     }
 
     
