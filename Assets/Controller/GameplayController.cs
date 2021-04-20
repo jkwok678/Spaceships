@@ -9,8 +9,8 @@ public class GameplayController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreCounter;
     [SerializeField] private TextMeshProUGUI livesCounter;
     // Start is called before the first frame update
-    public int score {private set; get;}
-    public int lives {private set; get;}
+    public static int score {private set; get;}
+    public static int lives {private set; get;}
 
     private void OnEnable()
     {
@@ -35,12 +35,12 @@ public class GameplayController : MonoBehaviour
 
     public void MinusLife()
     {
-        lives -= 1;
-        Debug.Log(livesCounter);
-        livesCounter.text = "Lives: " + lives.ToString();
-        if (lives ==0)
+        if (lives > 0)
         {
             //game over.
+            lives-=1;
         }
+        livesCounter.text = "Lives: " + lives.ToString();
+        
     }
 }

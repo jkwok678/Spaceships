@@ -30,12 +30,14 @@ public class PlayerController : MonoBehaviour
     
     public static event System.Action LoseLifeEvent;
 
-
+    private int lives;
+    private int scores;
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        
+        lives = GameplayController.lives;
+       
     }
 
     // Update is called once per frame
@@ -95,6 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             Die();
             LoseLifeEvent?.Invoke();
+            lives = GameplayController.lives;
             
         }
     }
@@ -103,7 +106,11 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
-        Invoke("Respawn",2f);
+        if (lives >0)
+        {
+            Invoke("Respawn",2f);
+        }
+        
     }
 
     private void Respawn()
