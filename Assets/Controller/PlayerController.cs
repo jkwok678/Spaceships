@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             Die();
             LoseLifeEvent?.Invoke();
-            
+            lives = GameplayController.lives;
             
         }
     }
@@ -106,7 +106,6 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
-        lives = GameplayController.lives;
         if (lives >0)
         {
             Invoke("Respawn",2f);
