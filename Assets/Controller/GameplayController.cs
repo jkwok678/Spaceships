@@ -11,6 +11,7 @@ public class GameplayController : MonoBehaviour
     // Start is called before the first frame update
     public static int score {private set; get;}
     public static int lives {private set; get;}
+    [SerializeField] private GameObject gameOverPanel;
 
     private void OnEnable()
     {
@@ -40,7 +41,15 @@ public class GameplayController : MonoBehaviour
             //game over.
             lives-=1;
         }
+        else
+        {
+            GameOver();
+        }
         livesCounter.text = "Lives: " + lives.ToString();
         
+    }
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
     }
 }
