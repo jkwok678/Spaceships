@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        lives = GameplayController.lives;
+        lives = GameplayController.GetLives();
        
     }
 
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             Die();
             LoseLifeEvent?.Invoke();
-            lives = GameplayController.lives;
+            
             
         }
     }
@@ -108,6 +108,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         rigidbody.velocity = Vector2.zero;
         rigidbody.position = Vector2.zero;
+        lives = GameplayController.GetLives();
         if (lives >0)
         {
             Invoke("Respawn",2f);
