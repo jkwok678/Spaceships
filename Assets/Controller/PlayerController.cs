@@ -106,6 +106,8 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
+        rigidbody.velocity = Vector2.zero;
+        rigidbody.position = Vector2.zero;
         if (lives >0)
         {
             Invoke("Respawn",2f);
