@@ -1,0 +1,5 @@
+Issues:
+No sound on asteroids exploding
+respawn random?
+1 script for Game manager
+Is it bad to have multiple of the same script?
