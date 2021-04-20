@@ -8,6 +8,7 @@ public class GameplayController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scoreCounter;
     [SerializeField] private TextMeshProUGUI livesCounter;
+    [SerializeField] private GameObject gameOverPanel;
     // Start is called before the first frame update
     [SerializeField] private static int score;
     [SerializeField] private static int lives;
@@ -58,6 +59,6 @@ public class GameplayController : MonoBehaviour
     }
     public void GameOver()
     {
-
+        gameOverPanel.SetActive(true);
     }
 }

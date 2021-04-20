@@ -113,6 +113,10 @@ public class PlayerController : MonoBehaviour
         {
             Invoke("Respawn",2f);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
         
     }
 
