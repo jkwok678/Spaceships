@@ -25,7 +25,7 @@ public class AsteroidsController : MonoBehaviour
 
     public int points;
 
-    public static event System.Action<int> ScorePointEvent;
+    public static event System.Action<int,bool> ScorePointEvent;
 
     [SerializeField] private AudioSource explosionSound;
 
@@ -75,15 +75,15 @@ public class AsteroidsController : MonoBehaviour
             {
                 GameObject asteroid1 = Instantiate(asteroidSmall1, rigidbody.position, transform.rotation);
                 GameObject asteroid2 = Instantiate(asteroidSmall2, rigidbody.position, transform.rotation);
-                
+                ScorePointEvent?.Invoke(points,true);
                 
             }
             else
             {
-                
+                ScorePointEvent?.Invoke(points,false);
             }
             
-            ScorePointEvent?.Invoke(points);
+            
             Destroy(gameObject);
             
             

@@ -12,11 +12,28 @@ public class GameplayController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI levelCounter;
     [SerializeField] private GameObject gameOverPanel;
 
-    [SerializeField] private int bigAsteroids;
-    [SerializeField] private int smallAsteroids;
+    [SerializeField] private GameObject bigAsteroid;
+    [SerializeField] private GameObject smallAsteroid1;
+    [SerializeField] private GameObject smallAsteroid2;
+
+
+    private int bigAsteroidsNo;
+    private int smallAsteroidsNo;
+
+    [SerializeField] private int levelBigAsteroidsNo;
+    [SerializeField] private int levelSmallAsteroidsNo;
     // Start is called before the first frame update
     [SerializeField] private static int score;
     [SerializeField] private static int lives;
+    [SerializeField] private static int level;
+
+    [SerializeField] private float topY;
+
+    [SerializeField] private float bottomY;
+
+    [SerializeField] private float rightX;
+
+    [SerializeField] private float leftX;
 
     public static int GetScore()
     {
@@ -31,8 +48,14 @@ public class GameplayController : MonoBehaviour
     {
         score = 0;
         lives = 3;
+        level = 1;
+        levelCounter.text = "Level: " + level.ToString();
+        bigAsteroidsNo = levelBigAsteroidsNo;
+        smallAsteroidsNo = levelSmallAsteroidsNo;
         AsteroidsController.ScorePointEvent += AddScore;
         PlayerController.LoseLifeEvent += MinusLife;
+        Debug.Log(bigAsteroidsNo);
+        Debug.Log(smallAsteroidsNo);
     }
 
     private void OnDisable()
@@ -41,18 +64,73 @@ public class GameplayController : MonoBehaviour
         PlayerController.LoseLifeEvent -= MinusLife;
     }
 
-    public void AddScore(int points)
+    public void AddScore(int points,bool plus)
     {
         score += points;
-        Debug.Log(scoreCounter);
+        //Debug.Log(scoreCounter);
         scoreCounter.text = "Score: " + score.ToString();
+        if (plus)
+        {
+            bigAsteroidsNo-=1;
+            smallAsteroidsNo+=2;
+        }
+        else
+        {
+            smallAsteroidsNo-=1;
+        }
+        Debug.Log(bigAsteroidsNo);
+        Debug.Log(smallAsteroidsNo);
+        checkNewLevel();
+        
+    }
+
+    public void checkNewLevel()
+    {
+        if (bigAsteroidsNo==0 && smallAsteroidsNo ==0)
+        {
+            level++;
+            levelCounter.text = "Level: " + level.ToString();
+            startNewLevel();
+        }
+    }
+
+    public void startNewLevel()
+    {
+        if ((levelBigAsteroidsNo+levelSmallAsteroidsNo)%2==0)
+        {
+            levelBigAsteroidsNo++;
+        }
+        else
+        {
+            levelSmallAsteroidsNo++;
+        }
+        bigAsteroidsNo = levelBigAsteroidsNo;
+        smallAsteroidsNo = levelSmallAsteroidsNo;
+        for(int i = 0; i<levelBigAsteroidsNo;i++)
+        {
+            Vector2 location = new Vector2(Random.Range(leftX,rightX),Random.Range(bottomY,topY));
+            Instantiate(bigAsteroid, location, Quaternion.identity);
+            
+        }
+        for(int i = 0; i<levelSmallAsteroidsNo;i++)
+        {
+            if (i%2 == 0)
+            {
+                Vector2 location = new Vector2(Random.Range(leftX,rightX),Random.Range(bottomY,topY));
+                Instantiate(smallAsteroid1, location, Quaternion.identity);
+            }
+            else
+            {
+                Vector2 location = new Vector2(Random.Range(leftX,rightX),Random.Range(bottomY,topY));
+                Instantiate(smallAsteroid2, location, Quaternion.identity);
+            }
+        }
     }
 
     public void MinusLife()
     {
-        if (lives > 0)
+        if (lives > 1)
         {
-            //game over.
             lives-=1;
         }
         else

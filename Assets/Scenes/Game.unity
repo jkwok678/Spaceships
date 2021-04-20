@@ -1216,6 +1216,8 @@ MonoBehaviour:
   livesCounter: {fileID: 990699952}
   levelCounter: {fileID: 1974330080}
   gameOverPanel: {fileID: 1146919923}
+  bigAsteroids: 1
+  smallAsteroids: 2
 --- !u!222 &1651592387
 CanvasRenderer:
   m_ObjectHideFlags: 0
