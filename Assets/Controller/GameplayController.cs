@@ -11,6 +11,9 @@ public class GameplayController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI livesCounter;
     [SerializeField] private TextMeshProUGUI levelCounter;
     [SerializeField] private GameObject gameOverPanel;
+
+    [SerializeField] private int bigAsteroids;
+    [SerializeField] private int smallAsteroids;
     // Start is called before the first frame update
     [SerializeField] private static int score;
     [SerializeField] private static int lives;
