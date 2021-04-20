@@ -23,7 +23,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject laser;
     [SerializeField] private float laserspeed;
     [SerializeField] private float destroyLaserTime;
-
+    [SerializeField] private float dieForce;
+    
+    public static event System.Action LoseLifeEvent;
 
 
 
@@ -82,6 +84,14 @@ public class PlayerController : MonoBehaviour
             newLocation.x = rightX;
         }
         rigidbody.position = newLocation;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.relativeVelocity.magnitude > dieForce)
+        {
+            LoseLifeEvent?.Invoke();
+        }
     }
 
     
