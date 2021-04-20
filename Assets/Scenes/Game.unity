@@ -1216,8 +1216,18 @@ MonoBehaviour:
   livesCounter: {fileID: 990699952}
   levelCounter: {fileID: 1974330080}
   gameOverPanel: {fileID: 1146919923}
-  bigAsteroids: 1
-  smallAsteroids: 2
+  bigAsteroid: {fileID: 8643401064193013845, guid: 8a55ceaade0a6a44db088247ac678e43,
+    type: 3}
+  smallAsteroid1: {fileID: 2244198837950629228, guid: a90c936ae609c9e4582b8937a03fae61,
+    type: 3}
+  smallAsteroid2: {fileID: 1505892061067682813, guid: 7373a89f1a382614ea2719dd6a221478,
+    type: 3}
+  levelBigAsteroidsNo: 1
+  levelSmallAsteroidsNo: 2
+  topY: 5.5
+  bottomY: -5.5
+  rightX: 9.5
+  leftX: -9.5
 --- !u!222 &1651592387
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1635,14 +1645,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1471595448, guid: 7373a89f1a382614ea2719dd6a221478, type: 3}
-      propertyPath: asteroidSmall1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1471595448, guid: 7373a89f1a382614ea2719dd6a221478, type: 3}
-      propertyPath: asteroidSmall2
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1505892061067682800, guid: 7373a89f1a382614ea2719dd6a221478,
         type: 3}
       propertyPath: m_RootOrder
@@ -1712,14 +1714,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1238896711, guid: a90c936ae609c9e4582b8937a03fae61, type: 3}
-      propertyPath: asteroidSmall1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238896711, guid: a90c936ae609c9e4582b8937a03fae61, type: 3}
-      propertyPath: asteroidSmall2
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2244198837950629216, guid: a90c936ae609c9e4582b8937a03fae61,
         type: 3}
       propertyPath: m_RootOrder
