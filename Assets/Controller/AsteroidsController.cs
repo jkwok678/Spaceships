@@ -27,7 +27,7 @@ public class AsteroidsController : MonoBehaviour
 
     public static event System.Action<int> ScorePointEvent;
 
-
+    [SerializeField] private AudioSource explosionSound;
 
 
 
@@ -70,6 +70,7 @@ public class AsteroidsController : MonoBehaviour
         if (anotherItem.CompareTag("laser"))
         {
             Destroy(anotherItem.gameObject);
+            explosionSound.Play();
             if (largeSize == true)
             {
                 GameObject asteroid1 = Instantiate(asteroidSmall1, rigidbody.position, transform.rotation);
