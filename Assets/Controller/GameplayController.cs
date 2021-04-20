@@ -9,6 +9,7 @@ public class GameplayController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scoreCounter;
     [SerializeField] private TextMeshProUGUI livesCounter;
+    [SerializeField] private TextMeshProUGUI levelCounter;
     [SerializeField] private GameObject gameOverPanel;
     // Start is called before the first frame update
     [SerializeField] private static int score;
