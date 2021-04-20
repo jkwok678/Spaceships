@@ -268,7 +268,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 495259196}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1651592385}
+        m_MethodName: GoMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &495259196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,7 +937,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play Again
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a79b9bcddaf63d4fbc034bbe80c9082, type: 2}
   m_sharedMaterial: {fileID: -6688424712885077034, guid: 4a79b9bcddaf63d4fbc034bbe80c9082,

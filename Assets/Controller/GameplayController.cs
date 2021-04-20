@@ -66,6 +66,11 @@ public class GameplayController : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Game");
+    }
+
+    public void GoMainMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 }
