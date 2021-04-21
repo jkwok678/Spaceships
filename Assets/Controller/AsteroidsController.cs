@@ -16,8 +16,6 @@ public class AsteroidsController : MonoBehaviour
     [SerializeField] private float rightX;
 
     [SerializeField] private float leftX;
-    
-    public bool largeSize;
 
     public GameObject asteroidSmall1;
 
@@ -26,6 +24,7 @@ public class AsteroidsController : MonoBehaviour
     public int points;
 
     public static event System.Action<int,bool> ScorePointEvent;
+    public static event System.Action ExplosionEvent;
 
     [SerializeField] private AudioSource explosionSound;
 
@@ -70,8 +69,8 @@ public class AsteroidsController : MonoBehaviour
         if (anotherItem.CompareTag("laser"))
         {
             Destroy(anotherItem.gameObject);
-            explosionSound.Play();
-            if (largeSize == true)
+            ExplosionEvent?.Invoke();
+            if (asteroidSmall1 && asteroidSmall2)
             {
                 GameObject asteroid1 = Instantiate(asteroidSmall1, rigidbody.position, transform.rotation);
                 GameObject asteroid2 = Instantiate(asteroidSmall2, rigidbody.position, transform.rotation);
