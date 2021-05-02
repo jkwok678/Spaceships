@@ -32,7 +32,7 @@ public class ProfileScript : MonoBehaviour
             if (File.Exists(fullPath))
             {
                 string fileContent = File.ReadAllText(fullPath);
-                string[] infoFromFile = fileContent.Split('\n');
+                string[] infoFromFile = fileContent.Split(',');
                 Debug.Log(infoFromFile[0]);
                 Debug.Log(infoFromFile[1]);
                 Debug.Log(infoFromFile[2]);
@@ -48,12 +48,7 @@ public class ProfileScript : MonoBehaviour
             {
                 using (StreamWriter writer = File.CreateText(fullPath))
                 {
-                    writer.WriteLine("Player 1");
-                    writer.WriteLine("Player 2");
-                    writer.WriteLine("Player 3");
-                    writer.WriteLine("0");
-                    writer.WriteLine("0");
-                    writer.WriteLine("0");
+                    writer.WriteLine("Player 1,Player 2,Player 3,0,0,0");
                 }
             }
             
@@ -106,7 +101,7 @@ public class ProfileScript : MonoBehaviour
             profileNames[i].readOnly = true;
             profileNames[i].interactable = false;
             toWrite+=profileNames[i].text.ToString();
-            toWrite+="\n";
+            toWrite+=",";
         }
         
         
@@ -120,7 +115,5 @@ public class ProfileScript : MonoBehaviour
         myProgramData.currentName = profileNames[value].text.ToString();
         myProgramData.currentHighScore = highScores[value];
         SceneManager.LoadScene("StartMenu");
-        
     }
-    
 }
