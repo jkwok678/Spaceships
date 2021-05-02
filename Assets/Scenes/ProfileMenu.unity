@@ -280,7 +280,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1829861804}
   m_Father: {fileID: 2034795817}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -331,7 +332,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 108273034}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2034795818}
+        m_MethodName: GoMainMenu
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &108273034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,17 +407,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115569279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 936109370}
-  m_Father: {fileID: 2034795817}
-  m_RootOrder: 3
+  m_Father: {fileID: 409239475}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.999, y: -267.8}
+  m_AnchoredPosition: {x: 0.0009994507, y: -294.4}
   m_SizeDelta: {x: 352.48218, y: 69.551544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115569281
@@ -707,7 +719,7 @@ RectTransform:
   m_Children:
   - {fileID: 1717193415}
   m_Father: {fileID: 2034795817}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -736,8 +748,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -834,7 +846,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 115569280}
   m_Father: {fileID: 2034795817}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -885,7 +898,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 409239477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2034795818}
+        m_MethodName: GoMainMenu
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &409239477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2220,17 +2244,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829861803}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1612534442}
-  m_Father: {fileID: 2034795817}
-  m_RootOrder: 4
+  m_Father: {fileID: 108273032}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 423, y: -267.8}
+  m_AnchoredPosition: {x: 0, y: -294.4}
   m_SizeDelta: {x: 352.48218, y: 69.551544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829861805
@@ -2616,8 +2640,6 @@ RectTransform:
   - {fileID: 26257293}
   - {fileID: 409239475}
   - {fileID: 108273032}
-  - {fileID: 115569280}
-  - {fileID: 1829861804}
   - {fileID: 242972713}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2639,15 +2661,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a94bc32f05b6394bafec2ea90479864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile1Button: {fileID: 0}
-  profile2Button: {fileID: 0}
-  profile3Button: {fileID: 0}
   profileButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  profile1Name: {fileID: 769137414}
-  profile2Name: {fileID: 115569281}
-  profile3Name: {fileID: 1829861805}
+  - {fileID: 26257294}
+  - {fileID: 409239476}
+  - {fileID: 108273033}
+  profileNames:
+  - {fileID: 769137414}
+  - {fileID: 115569281}
+  - {fileID: 1829861805}
+  highScores: 000000000000000000000000
+  editSaveButton: {fileID: 242972714}
   editSaveButtonText: {fileID: 1717193416}
-  myProgramData: {fileID: 0}
+  myProgramData: {fileID: 11400000, guid: 889d6344a31363a4bae27fd33cc65e72, type: 2}

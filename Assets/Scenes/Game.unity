@@ -1216,6 +1216,7 @@ MonoBehaviour:
     type: 3}
   smallAsteroid2: {fileID: 1505892061067682813, guid: 7373a89f1a382614ea2719dd6a221478,
     type: 3}
+  myProgramData: {fileID: 11400000, guid: 889d6344a31363a4bae27fd33cc65e72, type: 2}
   levelBigAsteroidsNo: 1
   levelSmallAsteroidsNo: 2
   topY: 5.5

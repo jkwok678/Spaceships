@@ -11,13 +11,11 @@ using TMPro;
 public class ProfileScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private Button profile1Button;
-    [SerializeField] private Button profile2Button;
-    [SerializeField] private Button profile3Button;
+
     [SerializeField] private Button[] profileButtons;
-    [SerializeField] private TMP_InputField profile1Name;
-    [SerializeField] private TMP_InputField profile2Name;
-    [SerializeField] private TMP_InputField profile3Name;
+    [SerializeField] private TMP_InputField[] profileNames;
+    [SerializeField] private int[] highScores;
+    [SerializeField] private Button editSaveButton;
     [SerializeField] private TextMeshProUGUI  editSaveButtonText;
     [SerializeField] private ProgramData  myProgramData; 
     string fullPath;
@@ -34,14 +32,17 @@ public class ProfileScript : MonoBehaviour
             if (File.Exists(fullPath))
             {
                 string fileContent = File.ReadAllText(fullPath);
-                string[] profileNames = fileContent.Split('\n');
-                Debug.Log(profileNames[0]);
-                Debug.Log(profileNames[1]);
-                Debug.Log(profileNames[2]);
+                string[] infoFromFile = fileContent.Split('\n');
+                Debug.Log(infoFromFile[0]);
+                Debug.Log(infoFromFile[1]);
+                Debug.Log(infoFromFile[2]);
 
-                profile1Name.text = profileNames[0];
-                profile2Name.text = profileNames[1];
-                profile3Name.text = profileNames[2];
+                profileNames[0].text = infoFromFile[0];
+                profileNames[1].text = infoFromFile[1];
+                profileNames[2].text = infoFromFile[2];
+                highScores[0] = Int32.Parse(infoFromFile[3]);
+                highScores[1] = Int32.Parse(infoFromFile[4]);
+                highScores[2] = Int32.Parse(infoFromFile[5]);
             }
             else
             {
@@ -50,6 +51,9 @@ public class ProfileScript : MonoBehaviour
                     writer.WriteLine("Player 1");
                     writer.WriteLine("Player 2");
                     writer.WriteLine("Player 3");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
+                    writer.WriteLine("0");
                 }
             }
             
@@ -70,7 +74,7 @@ public class ProfileScript : MonoBehaviour
         if (editMode)
         {
             saveNames();
-
+        
         }
         else
         {
@@ -81,15 +85,13 @@ public class ProfileScript : MonoBehaviour
     public void editNames()
     {
         editMode = true;
-        profile1Name.ActivateInputField();
-        profile2Name.ActivateInputField();
-        profile3Name.ActivateInputField();
-        profile1Name.readOnly = false;
-        profile2Name.readOnly = false;
-        profile3Name.readOnly = false;
-        profile1Name.interactable = true;
-        profile2Name.interactable = true;
-        profile3Name.interactable = true;
+        for (int i = 0; i<3;i++)
+        {
+            profileNames[i].ActivateInputField();
+            profileNames[i].readOnly = false;
+            profileNames[i].interactable = true;
+
+        }
 
         editSaveButtonText.text = "Save";
     }
@@ -97,27 +99,26 @@ public class ProfileScript : MonoBehaviour
     public void saveNames()
     {
         editMode = false;
-        profile1Name.DeactivateInputField();
-        profile2Name.DeactivateInputField();
-        profile3Name.DeactivateInputField();
-        profile1Name.readOnly = true;
-        profile2Name.readOnly = true;
-        profile3Name.readOnly = true;
-        profile1Name.interactable = false;
-        profile2Name.interactable = false;
-        profile3Name.interactable = false;
-        using (StreamWriter writer = File.CreateText(fullPath))
+        string toWrite="";
+        for (int i=0;i<3;i++)
         {
-            writer.WriteLine(profile1Name.text.ToString());
-            writer.WriteLine(profile2Name.text.ToString());
-            writer.WriteLine(profile3Name.text.ToString());
+            profileNames[i].DeactivateInputField();
+            profileNames[i].readOnly = true;
+            profileNames[i].interactable = false;
+            toWrite+=profileNames[i].text.ToString();
+            toWrite+="\n";
         }
+        
+        
+        File.WriteAllText(fullPath, toWrite);
         editSaveButtonText.text = "Edit";
     }
 
     public void GoMainMenu(int value)
     {
-        //myProgramData.Profile = profile;
+        myProgramData.id = value;
+        myProgramData.currentName = profileNames[value].text.ToString();
+        myProgramData.currentHighScore = highScores[value];
         SceneManager.LoadScene("StartMenu");
         
     }
