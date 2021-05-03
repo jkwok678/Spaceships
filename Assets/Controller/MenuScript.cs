@@ -22,6 +22,11 @@ public class MenuScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Transition");
+    }
+
+    public void StartTutorial()
+    {
+        SceneManager.LoadScene("Transition");
     }
 }
