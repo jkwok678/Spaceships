@@ -95,6 +95,7 @@ public class ProfileScript : MonoBehaviour
             profileNames[i].DeactivateInputField();
             profileNames[i].readOnly = true;
             profileNames[i].interactable = false;
+            ProgramData.Names[i] = profileNames[i].text.ToString();
         }
         
         ProgramData.WriteFile();

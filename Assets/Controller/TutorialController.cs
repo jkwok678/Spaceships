@@ -114,6 +114,7 @@ public class TutorialController : MonoBehaviour
         }
         else
         {
+            lives = 0;
             GameOver();
         }
         livesCounter.text = "Lives: " + lives.ToString();
