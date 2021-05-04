@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         GameObject newLaser = Instantiate(laser, transform.position, transform.rotation);
         newLaser.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * laserspeed);
+        ProgramData.Shots[ProgramData.Id]++;
         Destroy(newLaser, destroyLaserTime);
     }
 

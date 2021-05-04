@@ -66,6 +66,7 @@ public class GameplayController : MonoBehaviour
     {
         score += points;
         //Debug.Log(scoreCounter);
+        
         scoreCounter.text = "Score: " + score.ToString();
         if (plus)
         {

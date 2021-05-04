@@ -69,7 +69,7 @@ public class AsteroidsController : MonoBehaviour
         if (anotherItem.CompareTag("laser"))
         {
             Destroy(anotherItem.gameObject);
-            
+            ProgramData.ShotsHit[ProgramData.Id]++;
             if (asteroidSmall1 && asteroidSmall2)
             {
                 GameObject asteroid1 = Instantiate(asteroidSmall1, rigidbody.position, transform.rotation);

@@ -11,6 +11,7 @@ public static class ProgramData
     private static string[] names;
     private static int[] highestLevels;
     private static int[] shots;
+    private static int[] shotsHit;
 
     public static int Id 
     {
@@ -57,6 +58,18 @@ public static class ProgramData
         set 
         {
             shots = value;
+        }
+    }
+
+    public static int[] ShotsHit 
+    {
+        get 
+        {
+            return shotsHit;
+        }
+        set 
+        {
+            shotsHit = value;
         }
     }
 }
