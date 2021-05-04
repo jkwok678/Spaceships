@@ -48,15 +48,16 @@ public class ProfileScript : MonoBehaviour
                 highScores[0] = Int32.Parse(infoFromFile[3]);
                 highScores[1] = Int32.Parse(infoFromFile[4]);
                 highScores[2] = Int32.Parse(infoFromFile[5]);
-                highScoreTexts[0].text = "Highest level: " + highScores[0];
-                highScoreTexts[1].text = "Highest level: " + highScores[1];
-                highScoreTexts[2].text = "Highest level: " + highScores[2];
+                
                 shots[0] = Int32.Parse(infoFromFile[6]);
                 shots[1] = Int32.Parse(infoFromFile[7]);
                 shots[2] = Int32.Parse(infoFromFile[8]);
                 shotsHit[0] = Int32.Parse(infoFromFile[9]);
                 shotsHit[1] = Int32.Parse(infoFromFile[10]);
                 shotsHit[2] = Int32.Parse(infoFromFile[11]);
+                highScoreTexts[0].text = "Highest level: " + highScores[0]+ "\n" + "Asteroids destroyed: " + shotsHit[0];
+                highScoreTexts[1].text = "Highest level: " + highScores[1]+ "\n" + "Asteroids destroyed: " + shotsHit[1];
+                highScoreTexts[2].text = "Highest level: " + highScores[2]+ "\n" + "Asteroids destroyed: " + shotsHit[2];
                 Debug.Log(namesFromFile[0]);
                 Debug.Log(namesFromFile[1]);
                 Debug.Log(namesFromFile[2]);
