@@ -4,6 +4,7 @@ using System.IO;
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using System.Text;
 
@@ -45,6 +46,14 @@ public class LeaderboardController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GoMainMenu();
+        }
+    }
+
+    public void GoMainMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 }
