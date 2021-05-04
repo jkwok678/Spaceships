@@ -6,18 +6,20 @@ using TMPro;
 public class MenuScript : MonoBehaviour
 
 {
-    [SerializeField] private ProgramData  myProgramData; 
     [SerializeField] private TextMeshProUGUI welcomeMessage;
     // Start is called before the first frame update
     void Start()
     {
-        welcomeMessage.text = "Welcome " + myProgramData.currentName;
+        welcomeMessage.text = "Welcome " + ProgramData.Names[ProgramData.Id];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GoProfileScene();
+        }
     }
 
     public void StartGame()
@@ -27,6 +29,16 @@ public class MenuScript : MonoBehaviour
 
     public void StartTutorial()
     {
-        SceneManager.LoadScene("Transition");
+        SceneManager.LoadScene("TransitionTutorial");
+    }
+
+    public void GoLeaderboard()
+    {
+        SceneManager.LoadScene("Leaderboard");
+    }
+
+    public void GoProfileScene()
+    {
+        SceneManager.LoadScene("ProfileMenu");
     }
 }

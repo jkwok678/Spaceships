@@ -16,9 +16,6 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private GameObject bigAsteroid;
     [SerializeField] private GameObject smallAsteroid1;
     [SerializeField] private GameObject smallAsteroid2;
-    [SerializeField] private ProgramData  myProgramData; 
-
-
     private int bigAsteroidsNo;
     private int smallAsteroidsNo;
 

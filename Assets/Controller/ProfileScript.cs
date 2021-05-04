@@ -19,7 +19,7 @@ public class ProfileScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[]  highScoreTexts;
     [SerializeField] private Button editSaveButton;
     [SerializeField] private TextMeshProUGUI  editSaveButtonText;
-    [SerializeField] private ProgramData  myProgramData; 
+    
     string fullPath;
     private bool editMode;
     void Start()
@@ -42,6 +42,10 @@ public class ProfileScript : MonoBehaviour
                 profileNames[0].text = infoFromFile[0];
                 profileNames[1].text = infoFromFile[1];
                 profileNames[2].text = infoFromFile[2];
+                string[] namesFromFile = new string[3];
+                namesFromFile[0] = profileNames[0].text;
+                namesFromFile[1] = profileNames[1].text;
+                namesFromFile[2] = profileNames[2].text;
                 highScores[0] = Int32.Parse(infoFromFile[3]);
                 highScores[1] = Int32.Parse(infoFromFile[4]);
                 highScores[2] = Int32.Parse(infoFromFile[5]);
@@ -51,6 +55,9 @@ public class ProfileScript : MonoBehaviour
                 shots[0] = Int32.Parse(infoFromFile[6]);
                 shots[1] = Int32.Parse(infoFromFile[7]);
                 shots[2] = Int32.Parse(infoFromFile[8]);
+                ProgramData.Names = namesFromFile;
+                ProgramData.HighestLevels = highScores;
+                ProgramData.Shots = shots;
             }
             else
             {
@@ -111,6 +118,17 @@ public class ProfileScript : MonoBehaviour
             toWrite+=profileNames[i].text.ToString();
             toWrite+=",";
         }
+        for (int i=0;i<3;i++)
+        {
+            toWrite+=highScores[i];
+            toWrite+=",";
+        }
+        for (int i=0;i<3;i++)
+        {
+            toWrite+=shots[i];
+            toWrite+=",";
+        }
+
         
         
         File.WriteAllText(fullPath, toWrite);
@@ -119,9 +137,8 @@ public class ProfileScript : MonoBehaviour
 
     public void GoMainMenu(int value)
     {
-        myProgramData.id = value;
-        myProgramData.currentName = profileNames[value].text.ToString();
-        myProgramData.currentHighScore = highScores[value];
+        ProgramData.Id = value;
+        
         SceneManager.LoadScene("StartMenu");
     }
 }

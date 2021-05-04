@@ -9,8 +9,16 @@ public class TransitionScript : MonoBehaviour
     private Rigidbody2D rigidbody;
     void Start()
     {
+
         rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.AddRelativeForce(Vector2.up * 150);
+        rigidbody.AddRelativeForce(Vector2.up * 200);
+        
+
+        
+    }
+    private void FixedUpdate() {
+        float newAngle = rigidbody.rotation- 2;
+        rigidbody.MoveRotation(newAngle);    
     }
 
     // Update is called once per frame

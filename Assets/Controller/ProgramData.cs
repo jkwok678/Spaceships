@@ -3,11 +3,62 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ProgramData", menuName = "Program Data", order = 51)]
-public class ProgramData : ScriptableObject {
-    [SerializeField] public int id {get;set;}
-    [SerializeField] public string currentName {get;set;}
-    [SerializeField] public int currentHighScore {get;set;}
+
+public static class ProgramData
+{
+    private static int id;
+
+    private static string[] names;
+    private static int[] highestLevels;
+    private static int[] shots;
+
+    public static int Id 
+    {
+        get 
+        {
+            return id;
+        }
+        set 
+        {
+            id = value;
+        }
+    }
+
+    public static string[] Names 
+    {
+        get 
+        {
+            return names;
+        }
+        set 
+        {
+            names = value;
+        }
+    }
+
+    public static int[] HighestLevels 
+    {
+        get 
+        {
+            return highestLevels;
+        }
+        set 
+        {
+            highestLevels = value;
+        }
+    }
+
+    public static int[] Shots 
+    {
+        get 
+        {
+            return shots;
+        }
+        set 
+        {
+            shots = value;
+        }
+    }
 }
 
 

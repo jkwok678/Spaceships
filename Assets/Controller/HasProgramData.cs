@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HasProgramData : MonoBehaviour
 {
-    [SerializeField] private ProgramData  myProgramData; 
+    
     // Start is called before the first frame update
     void Start()
     {
