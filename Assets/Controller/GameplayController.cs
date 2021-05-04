@@ -66,7 +66,6 @@ public class GameplayController : MonoBehaviour
     {
         score += points;
         //Debug.Log(scoreCounter);
-        
         scoreCounter.text = "Score: " + score.ToString();
         if (plus)
         {
@@ -134,6 +133,7 @@ public class GameplayController : MonoBehaviour
         }
         else
         {
+            lives = 0;
             GameOver();
         }
         livesCounter.text = "Lives: " + lives.ToString();
@@ -141,6 +141,11 @@ public class GameplayController : MonoBehaviour
     }
     public void GameOver()
     {
+        if (level>ProgramData.HighestLevels[ProgramData.Id])
+        {
+            ProgramData.HighestLevels[ProgramData.Id] = level;
+        }
+        ProgramData.WriteFile();
         gameOverPanel.SetActive(true);
     }
 

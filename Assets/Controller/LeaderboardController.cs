@@ -30,6 +30,7 @@ public class LeaderboardController : MonoBehaviour
         highScores.Add(Int32.Parse(infoFromFile[5]));
         string leaderText = "";
         
+        
         for(int i = 0;i<3;i++)
         {
             int maxValue = highScores.Max();
@@ -40,6 +41,12 @@ public class LeaderboardController : MonoBehaviour
             highScores.RemoveAt(maxIndex);
         }
         leaderboardText.text = leaderText;
+
+        int[] percentage = new int[3];
+        for(int i = 0; i<3;i++)
+        {
+            pecentage[i] = ProgramData.ShotsHit[i]/ProgramData.Shots[i];
+        }
 
     }
 

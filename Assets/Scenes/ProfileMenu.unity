@@ -3076,10 +3076,10 @@ MonoBehaviour:
   - {fileID: 1829861805}
   highScores: 000000000000000000000000
   shots: 000000000000000000000000
+  shotsHit: 000000000000000000000000
   highScoreTexts:
   - {fileID: 1603525017}
   - {fileID: 472207218}
   - {fileID: 66552423}
   editSaveButton: {fileID: 242972714}
   editSaveButtonText: {fileID: 1717193416}
-  myProgramData: {fileID: 11400000, guid: 889d6344a31363a4bae27fd33cc65e72, type: 2}

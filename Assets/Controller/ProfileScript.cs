@@ -36,9 +36,7 @@ public class ProfileScript : MonoBehaviour
             {
                 string fileContent = File.ReadAllText(fullPath);
                 string[] infoFromFile = fileContent.Split(',');
-                Debug.Log(infoFromFile[0]);
-                Debug.Log(infoFromFile[1]);
-                Debug.Log(infoFromFile[2]);
+                
 
                 profileNames[0].text = infoFromFile[0];
                 profileNames[1].text = infoFromFile[1];
@@ -59,6 +57,9 @@ public class ProfileScript : MonoBehaviour
                 shotsHit[0] = Int32.Parse(infoFromFile[9]);
                 shotsHit[1] = Int32.Parse(infoFromFile[10]);
                 shotsHit[2] = Int32.Parse(infoFromFile[11]);
+                Debug.Log(namesFromFile[0]);
+                Debug.Log(namesFromFile[1]);
+                Debug.Log(namesFromFile[2]);
                 ProgramData.Names = namesFromFile;
                 ProgramData.HighestLevels = highScores;
                 ProgramData.Shots = shots;
@@ -115,33 +116,14 @@ public class ProfileScript : MonoBehaviour
     {
         editMode = false;
         string toWrite="";
-        for (int i=0;i<3;i++)
+        for(int i = 0;i<3;i++)
         {
             profileNames[i].DeactivateInputField();
             profileNames[i].readOnly = true;
             profileNames[i].interactable = false;
-            toWrite+=profileNames[i].text.ToString();
-            toWrite+=",";
         }
-        for (int i=0;i<3;i++)
-        {
-            toWrite+=highScores[i];
-            toWrite+=",";
-        }
-        for (int i=0;i<3;i++)
-        {
-            toWrite+=shots[i];
-            toWrite+=",";
-        }
-        for (int i=0;i<3;i++)
-        {
-            toWrite+=shotsHit[i];
-            toWrite+=",";
-        }
-
         
-        
-        File.WriteAllText(fullPath, toWrite);
+        ProgramData.WriteFile();
         editSaveButtonText.text = "Edit";
     }
 

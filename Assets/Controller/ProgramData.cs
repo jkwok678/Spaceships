@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public static class ProgramData
 {
+    public static string fullPath = Application.persistentDataPath + "/profile.txt";
     private static int id;
 
     private static string[] names;
@@ -71,6 +73,32 @@ public static class ProgramData
         {
             shotsHit = value;
         }
+    }
+
+    public static void WriteFile()
+    {
+        string toWrite="";
+        for (int i=0;i<3;i++)
+        {
+            toWrite+=names[i];
+            toWrite+=",";
+        }
+        for (int i=0;i<3;i++)
+        {
+            toWrite+=highestLevels[i];
+            toWrite+=",";
+        }
+        for (int i=0;i<3;i++)
+        {
+            toWrite+=shots[i];
+            toWrite+=",";
+        }
+        for (int i=0;i<3;i++)
+        {
+            toWrite+=shotsHit[i];
+            toWrite+=",";
+        }
+        File.WriteAllText(fullPath, toWrite);
     }
 }
 
