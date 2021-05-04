@@ -11,6 +11,7 @@ using System.Text;
 public class LeaderboardController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI  leaderboardText;
+    [SerializeField] private TextMeshProUGUI  leaderboardText2;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +29,17 @@ public class LeaderboardController : MonoBehaviour
         highScores.Add(Int32.Parse(infoFromFile[3]));
         highScores.Add(Int32.Parse(infoFromFile[4]));
         highScores.Add(Int32.Parse(infoFromFile[5]));
-        string leaderText = "";
-        
+        string leaderText = "Highest level \n";
+        int[] shots = new int[3];
+        int[] shotsHit = new int[3];
+        shots[0] = Int32.Parse(infoFromFile[6]);
+        shots[1] = Int32.Parse(infoFromFile[7]);
+        shots[2] = Int32.Parse(infoFromFile[8]);
+        shotsHit[0] = Int32.Parse(infoFromFile[9]);
+        shotsHit[1] = Int32.Parse(infoFromFile[10]);
+        shotsHit[2] = Int32.Parse(infoFromFile[11]);
+        ProgramData.Shots = shots;
+        ProgramData.ShotsHit = shotsHit;
         
         for(int i = 0;i<3;i++)
         {
@@ -41,12 +51,26 @@ public class LeaderboardController : MonoBehaviour
             highScores.RemoveAt(maxIndex);
         }
         leaderboardText.text = leaderText;
+        names.Add(infoFromFile[0]);
+        names.Add(infoFromFile[1]);
+        names.Add(infoFromFile[2]);
 
-        int[] percentage = new int[3];
+        List<float> percentage = new List<float>();
         for(int i = 0; i<3;i++)
         {
-            pecentage[i] = ProgramData.ShotsHit[i]/ProgramData.Shots[i];
+            percentage.Add((float)ProgramData.ShotsHit[i]/(float)ProgramData.Shots[i]);
         }
+        string leaderText2 = "Highest shot accuracy (%) \n";
+        for(int i = 0;i<3;i++)
+        {
+            float maxValue = percentage.Max();
+            int maxIndex = percentage.IndexOf(maxValue);
+            int j = i+1;
+            leaderText2 += (j).ToString() +". " + names[maxIndex] + "   " + (percentage[maxIndex]*100).ToString() + "\n";
+            names.RemoveAt(maxIndex);
+            percentage.RemoveAt(maxIndex);
+        }
+        leaderboardText2.text = leaderText2;
 
     }
 
