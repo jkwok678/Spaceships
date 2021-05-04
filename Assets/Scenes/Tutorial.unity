@@ -269,7 +269,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1651592385}
         m_MethodName: GoMainMenu
         m_Mode: 1
         m_Arguments:
@@ -1029,8 +1029,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PlayAgain
+      - m_Target: {fileID: 1651592385}
+        m_MethodName: ReloadTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1551,6 +1551,7 @@ MonoBehaviour:
   livesCounter: {fileID: 990699952}
   tutorial: {fileID: 962332824}
   gameOverPanel: {fileID: 1146919923}
+  tutorialEndText: {fileID: 2026420915}
   bigAsteroid: {fileID: 0}
   smallAsteroid1: {fileID: 0}
   smallAsteroid2: {fileID: 0}

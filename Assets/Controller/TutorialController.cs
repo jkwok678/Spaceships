@@ -11,6 +11,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI livesCounter;
     [SerializeField] private TextMeshProUGUI tutorial;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private TextMeshProUGUI tutorialEndText;
 
     [SerializeField] private GameObject bigAsteroid;
     [SerializeField] private GameObject smallAsteroid1;
@@ -123,6 +124,14 @@ public class TutorialController : MonoBehaviour
     }
     public void GameOver()
     {
+        if (lives == 0)
+        {
+            tutorialEndText.text ="Please try the tutorial again!";
+        }
+        else
+        {
+            tutorialEndText.text ="You're ready to try the actual game!";
+        }
         gameOverPanel.SetActive(true);
     }
 
@@ -130,6 +139,11 @@ public class TutorialController : MonoBehaviour
     public void GoMainMenu()
     {
         SceneManager.LoadScene("StartMenu");
+    }
+
+    public void ReloadTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
     }
 }
 
