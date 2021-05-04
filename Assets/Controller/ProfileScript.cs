@@ -16,7 +16,7 @@ public class ProfileScript : MonoBehaviour
     [SerializeField] private TMP_InputField[] profileNames;
     [SerializeField] private int[] highScores;
     [SerializeField] private int[] shots;
-     [SerializeField] private TextMeshProUGUI[]  highScoreTexts;
+    [SerializeField] private TextMeshProUGUI[]  highScoreTexts;
     [SerializeField] private Button editSaveButton;
     [SerializeField] private TextMeshProUGUI  editSaveButtonText;
     [SerializeField] private ProgramData  myProgramData; 
