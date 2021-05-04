@@ -15,6 +15,8 @@ public class ProfileScript : MonoBehaviour
     [SerializeField] private Button[] profileButtons;
     [SerializeField] private TMP_InputField[] profileNames;
     [SerializeField] private int[] highScores;
+    [SerializeField] private int[] shots;
+     [SerializeField] private TextMeshProUGUI[]  highScoreTexts;
     [SerializeField] private Button editSaveButton;
     [SerializeField] private TextMeshProUGUI  editSaveButtonText;
     [SerializeField] private ProgramData  myProgramData; 
@@ -43,12 +45,18 @@ public class ProfileScript : MonoBehaviour
                 highScores[0] = Int32.Parse(infoFromFile[3]);
                 highScores[1] = Int32.Parse(infoFromFile[4]);
                 highScores[2] = Int32.Parse(infoFromFile[5]);
+                highScoreTexts[0].text = "Highest level: " + highScores[0];
+                highScoreTexts[1].text = "Highest level: " + highScores[1];
+                highScoreTexts[2].text = "Highest level: " + highScores[2];
+                shots[0] = Int32.Parse(infoFromFile[6]);
+                shots[1] = Int32.Parse(infoFromFile[7]);
+                shots[2] = Int32.Parse(infoFromFile[8]);
             }
             else
             {
                 using (StreamWriter writer = File.CreateText(fullPath))
                 {
-                    writer.WriteLine("Player 1,Player 2,Player 3,0,0,0");
+                    writer.WriteLine("Player 1,Player 2,Player 3,0,0,0,0,0,0");
                 }
             }
             
