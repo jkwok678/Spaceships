@@ -13,8 +13,6 @@ public class TransitionScript : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.AddRelativeForce(Vector2.up * 200);
         
-
-        
     }
     private void FixedUpdate() {
         float newAngle = rigidbody.rotation- 2;

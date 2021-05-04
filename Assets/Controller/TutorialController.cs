@@ -129,6 +129,7 @@ public class TutorialController : MonoBehaviour
         {
             tutorialEndText.text ="You're ready to try the actual game!";
         }
+        tutorial.text = "";
         gameOverPanel.SetActive(true);
     }
 
