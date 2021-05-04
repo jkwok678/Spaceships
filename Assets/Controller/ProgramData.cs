@@ -100,6 +100,33 @@ public static class ProgramData
         }
         File.WriteAllText(fullPath, toWrite);
     }
+
+    public static void fillInfoFromFile()
+    {
+        string fileContent = File.ReadAllText(fullPath);
+        string[] infoFromFile = fileContent.Split(',');
+
+        string[] namesFromFile = new string[3];
+        namesFromFile[0] = infoFromFile[0];
+        namesFromFile[1] = infoFromFile[1];
+        namesFromFile[2] = infoFromFile[2];
+        names = namesFromFile;
+        int[] highScoresFromFile = new int[3];
+        highScoresFromFile[0] = Int32.Parse(infoFromFile[3]);
+        highScoresFromFile[1] = Int32.Parse(infoFromFile[4]);
+        highScoresFromFile[2] = Int32.Parse(infoFromFile[5]);
+        highestLevels = highScoresFromFile;
+        int[] shotsFromFile = new int[3];
+        shotsFromFile[0] = Int32.Parse(infoFromFile[6]);
+        shotsFromFile[1] = Int32.Parse(infoFromFile[7]);
+        shotsFromFile[2] = Int32.Parse(infoFromFile[8]);
+        shots = shotsFromFile;
+        int[] shotsHitFromFile = new int[3];
+        shotsHitFromFile[0] = Int32.Parse(infoFromFile[9]);
+        shotsHitFromFile[1] = Int32.Parse(infoFromFile[10]);
+        shotsHitFromFile[2] = Int32.Parse(infoFromFile[11]);
+        shotsHit = shotsHitFromFile;
+    }
 }
 
 

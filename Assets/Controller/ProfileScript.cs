@@ -34,37 +34,10 @@ public class ProfileScript : MonoBehaviour
         {
             if (File.Exists(fullPath))
             {
-                string fileContent = File.ReadAllText(fullPath);
-                string[] infoFromFile = fileContent.Split(',');
-                
 
-                profileNames[0].text = infoFromFile[0];
-                profileNames[1].text = infoFromFile[1];
-                profileNames[2].text = infoFromFile[2];
-                string[] namesFromFile = new string[3];
-                namesFromFile[0] = profileNames[0].text;
-                namesFromFile[1] = profileNames[1].text;
-                namesFromFile[2] = profileNames[2].text;
-                highScores[0] = Int32.Parse(infoFromFile[3]);
-                highScores[1] = Int32.Parse(infoFromFile[4]);
-                highScores[2] = Int32.Parse(infoFromFile[5]);
-                
-                shots[0] = Int32.Parse(infoFromFile[6]);
-                shots[1] = Int32.Parse(infoFromFile[7]);
-                shots[2] = Int32.Parse(infoFromFile[8]);
-                shotsHit[0] = Int32.Parse(infoFromFile[9]);
-                shotsHit[1] = Int32.Parse(infoFromFile[10]);
-                shotsHit[2] = Int32.Parse(infoFromFile[11]);
-                highScoreTexts[0].text = "Highest level: " + highScores[0]+ "\n" + "Asteroids destroyed: " + shotsHit[0];
-                highScoreTexts[1].text = "Highest level: " + highScores[1]+ "\n" + "Asteroids destroyed: " + shotsHit[1];
-                highScoreTexts[2].text = "Highest level: " + highScores[2]+ "\n" + "Asteroids destroyed: " + shotsHit[2];
-                Debug.Log(namesFromFile[0]);
-                Debug.Log(namesFromFile[1]);
-                Debug.Log(namesFromFile[2]);
-                ProgramData.Names = namesFromFile;
-                ProgramData.HighestLevels = highScores;
-                ProgramData.Shots = shots;
-                ProgramData.ShotsHit = shotsHit;
+                ProgramData.fillInfoFromFile();
+
+                ReloadProfileGUI();
             }
             else
             {
@@ -125,6 +98,7 @@ public class ProfileScript : MonoBehaviour
         }
         
         ProgramData.WriteFile();
+        ProgramData.fillInfoFromFile();
         editSaveButtonText.text = "Edit";
     }
 
@@ -133,5 +107,15 @@ public class ProfileScript : MonoBehaviour
         ProgramData.Id = value;
         
         SceneManager.LoadScene("StartMenu");
+    }
+    public void ReloadProfileGUI()
+    {
+        profileNames[0].text = ProgramData.Names[0];
+        profileNames[1].text = ProgramData.Names[1];
+        profileNames[2].text = ProgramData.Names[2];
+
+        highScoreTexts[0].text = "Highest level: " + ProgramData.HighestLevels[0]+ "\n" + "Asteroids destroyed: " + ProgramData.ShotsHit[0];
+        highScoreTexts[1].text = "Highest level: " + ProgramData.HighestLevels[1]+ "\n" + "Asteroids destroyed: " + ProgramData.ShotsHit[1];
+        highScoreTexts[2].text = "Highest level: " + ProgramData.HighestLevels[2]+ "\n" + "Asteroids destroyed: " + ProgramData.ShotsHit[2];
     }
 }
