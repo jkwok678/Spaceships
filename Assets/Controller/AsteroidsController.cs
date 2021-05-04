@@ -85,10 +85,7 @@ public class AsteroidsController : MonoBehaviour
             
             Destroy(gameObject);
             
-            
-            
         }
     }
-
     
 }
