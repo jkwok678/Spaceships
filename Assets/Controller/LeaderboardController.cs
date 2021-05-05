@@ -60,13 +60,13 @@ public class LeaderboardController : MonoBehaviour
         {
             percentage.Add((float)ProgramData.ShotsHit[i]/(float)ProgramData.Shots[i]);
         }
-        string leaderText2 = "Highest shot accuracy (%) \n";
+        string leaderText2 = "Highest shot accuracy  \n";
         for(int i = 0;i<3;i++)
         {
             float maxValue = percentage.Max();
             int maxIndex = percentage.IndexOf(maxValue);
             int j = i+1;
-            leaderText2 += (j).ToString() +". " + names[maxIndex] + "   " + (percentage[maxIndex]*100).ToString() + "\n";
+            leaderText2 += (j).ToString() +". " + names[maxIndex] + "   " + (percentage[maxIndex]*100).ToString() + "%\n";
             names.RemoveAt(maxIndex);
             percentage.RemoveAt(maxIndex);
         }
